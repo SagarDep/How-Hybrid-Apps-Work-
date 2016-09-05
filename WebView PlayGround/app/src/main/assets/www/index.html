@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; user-scalable=0;"/>
+    <title>Demo HTML</title>
+</head>
+<body>
+<h1> Calling JS to Java and Vice Verse</h1>
+
+<p id="mytext">Hello!</p>
+<input type="button" value="Say hello to Java"
+       onClick="callJavaFunctionFromJS('Hello to Java From JS')"/>
+
+<script language="javascript">
+
+   /*Call Java from JS */
+   function callJavaFunctionFromJS(toast) {
+
+       AndroidFunction.doSomethingOnNativeSide(toast);
+   }
+
+  /*
+   * Call JS function from java
+   */
+   function callJSFunctionFromJava(msg){
+
+    document.getElementById("mytext").innerHTML = msg;
+
+   }
+
+ /*
+   * Call JS function from java
+   */
+   function callJSFunctionFromJavaAndReturnValue(msg){
+
+    document.getElementById("mytext").innerHTML = msg;
+
+    callJavaFunctionFromJS("hello from JS");
+
+   }
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
